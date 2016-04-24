@@ -1,0 +1,5 @@
+# The sole purpose of this file
+# is so we can git clean -f -d and
+# it will get rid of the contents of this
+# directory but not get rid of the directory,
+# ... because this file is in the directory.
