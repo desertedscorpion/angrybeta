@@ -1,0 +1,9 @@
+[Unit]
+Description=git repository service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/sbin/angrybeta.sh
+
+[Install]
+WantedBy=default.target
