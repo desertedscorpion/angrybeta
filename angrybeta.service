@@ -3,7 +3,7 @@ Description=git repository service
 After=network.target
 
 [Service]
-ExecStart=/usr/local/sbin/angrybeta.sh
+ExecStart="/usr/local/bin/angrybeta"
 
 [Install]
 WantedBy=default.target

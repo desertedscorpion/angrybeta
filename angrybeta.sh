@@ -1,9 +1,11 @@
 #!/bin/bash
 
+GIT_URL="${@}" &&
+echo ${GIT_URL} ${HOME} &&
 if [ ! -f /root/.ssh/id_rsa ]
 then
-    cp /var/private/id_rsa /root/.ssh/id_rsa &&
-    chmod 0600 /root/.ssh/id_rsa
+    cp /var/private/id_rsa ${HOME}/.ssh/id_rsa &&
+    chmod 0600 ${HOME}/.ssh/id_rsa
     true
 fi &&
 if [ ! -d /srv/repository ]
