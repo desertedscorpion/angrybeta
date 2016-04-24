@@ -6,16 +6,11 @@ then
     chmod 0600 /root/.ssh/id_rsa
     true
 fi &&
-if [ ! -d /srv/repository ]
+if [ -d /srv/.git ]
 then
-    mkdir /srv/repository &&
-    git -C /srv/repository init &&
-    git -C /srv/repository remote add origin ${GIT_URL} &&
-    git -C /srv/repository fetch origin master &&
-    git -C /srv/repository checkout master &&
+    git -C /srv fetch origin master &&
+    git -C /srv rebase origin/master &&
+    git -C /srv push origin master &&
     true
-fi &&
-git -C /srv/repository fetch origin master &&
-git -C /srv/repository rebase origin/master &&
-git -C /srv/repository push origin master &&
+    fi &&
 true
